@@ -67,8 +67,7 @@ class App extends Component {
       fetch('https://murming-atoll-67492.herokuapp.com/imageurl', {
               method: 'post',
               headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin': '*'
+                'Content-Type': 'application/json'
               },
               body: JSON.stringify({
               input: this.state.input
