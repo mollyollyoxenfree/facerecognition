@@ -66,7 +66,10 @@ class App extends Component {
     this.setState({imageUrl: this.state.input});
       fetch('https://murming-atoll-67492.herokuapp.com/imageurl', {
               method: 'post',
-              headers: {'Content-Type': 'application/json'},
+              headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+              },
               body: JSON.stringify({
               input: this.state.input
               })
