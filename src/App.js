@@ -65,10 +65,8 @@ class App extends Component {
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
       fetch('https://murming-atoll-67492.herokuapp.com/imageurl', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json'
-              },
+              method: 'post',
+              headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
               input: this.state.input
               })
@@ -77,7 +75,7 @@ class App extends Component {
         .then(response => {
           if (response) {
             fetch('https://murming-atoll-67492.herokuapp.com/image', {
-              method: 'PUT',
+              method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
               id: this.state.user.id
@@ -131,4 +129,3 @@ class App extends Component {
 }
 
 export default App;
-
